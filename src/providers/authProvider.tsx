@@ -1,7 +1,8 @@
 'use client'
 
-import { UserProvider } from "@/context/authContext";
 import { ReactNode } from "react";
+import { UserProvider } from "@/context/authContext";
+import { ChakraProvider } from '@chakra-ui/react'
 
 
 
@@ -12,5 +13,12 @@ interface UserProviderProps {
 
 
 export const Providers = ({ children }: UserProviderProps) => {
-  return <UserProvider>{children}</UserProvider>
+  return (
+
+    <UserProvider>
+      <ChakraProvider>
+        {children}
+      </ChakraProvider>
+    </UserProvider>
+  )
 }

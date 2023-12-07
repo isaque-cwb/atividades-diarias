@@ -8,6 +8,7 @@ import { FormEvent, useEffect, useState } from "react"
 import PulseLoader from "react-spinners/PulseLoader"
 import Cookie from 'js-cookie'
 import { Loading } from "@/components/Loading"
+import Header from "@/components/Header"
 
 
 export default function Home() {
@@ -38,8 +39,10 @@ export default function Home() {
   }
 
   return (
-    <>
-      <h1 className="grid h-screen place-content-center bg-slate-100  gap-2">Página Home...
+    <div className="flex flex-col h-screen items-center">
+      <Header />
+
+      <div className="flex flex-col w-full h-full place-content-center bg-slate-100  gap-2">
         <p className="border-2 rounded-md p-1 bg-gray-100">{userAuth?.user.email}</p>
         <div className="border-2 rounded-md p-1 bg-gray-100">
           <Link href={"/"}> voltar para Login</Link>
@@ -63,9 +66,8 @@ export default function Home() {
           </button>
 
         </div>
-      </h1>
+      </div>
 
-
-    </>
+    </div>
   )
 }

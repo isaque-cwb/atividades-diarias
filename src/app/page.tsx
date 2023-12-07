@@ -53,7 +53,7 @@ export default function Login() {
         }
       })
     }
-
+    Cookie.remove('auth_token')
     onChangeAuth()
 
   }, [])
