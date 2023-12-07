@@ -6,13 +6,20 @@ import { auth } from "@/utils/firebase/firebase-service"
 import imgPlanejamento from '../../public/planejamento.png'
 import Image from "next/image"
 import PulseLoader from 'react-spinners/PulseLoader'
+import { useAuthContext } from "@/context/authContext"
+import { Auth, User } from "firebase/auth"
+import Link from "next/link"
+import { useRouter } from "next/navigation"
+import Cookie from 'js-cookie'
+
 
 
 export default function Login() {
 
   const [userState, setUserState] = useState('')
   const [isLoading, setIsLoading] = useState(false)
-
+  const { userAuth, handleStateUserChange } = useAuthContext()
+  const router = useRouter()
 
   async function handleLogin(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
@@ -22,17 +29,18 @@ export default function Login() {
     const passInput = form.elements.namedItem("pass") as HTMLInputElement
 
     login(emailInput.value, passInput.value).then((user) => {
+
       setUserState(user.user.uid)
+      handleStateUserChange(user)
+      window.sessionStorage.setItem('auth_token', user.user.uid)
+      Cookie.set('auth_token', user.user.uid)
+      setIsLoading(false)
+      router.push('/Home')
+
     }).catch(error => {
       alert("Ocorreu um Erro ao tentarmos efetuar o seu login.")
       setIsLoading(false)
     })
-  }
-
-  async function authOut() {
-    setUserState('')
-    logOut()
-    setIsLoading(false)
   }
 
 
@@ -50,13 +58,8 @@ export default function Login() {
 
   }, [])
 
-  if (userState) {
-    return (
-      <main onSubmit={handleLogin} className="grid h-screen place-content-center bg-slate-100 ">
-        <button onClick={authOut}>Sair</button>
-      </main>
-    )
-  }
+
+
 
   return (
 
@@ -77,16 +80,20 @@ export default function Login() {
                 loading={isLoading}
 
               />
-              //  ? <span className=" mt-1 animate-bounce infinit ">Carregando...</span>
               :
               <span className=" transition duration-300 hover:scale-110  w-full">
                 Acessar
               </span>
             }
           </button>
+          {userAuth ? <Link href={"/Home"}>Entrar na Home</Link> : null}
         </form>
       </div>
     </main>
   )
 
 }
+
+
+
+

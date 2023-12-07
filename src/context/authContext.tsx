@@ -1,32 +1,43 @@
-import React, { createContext, useCallback, useState, ReactNode, useContext } from 'react';
+import { User } from 'firebase/auth';
+import React, { createContext, useContext, useState } from 'react';
 
-type UserContextProps = {
-  userContext: string
-  handleNameChange: () => void
-
+export type UserAuthProps = {
+  user: User
 }
 
-type UserContextChildrenProps = {
-  children?: ReactNode
+type AuthContextProps = {
+  userAuth: UserAuthProps | null,
+  handleStateUserChange: (userAuth: UserAuthProps) => void,
+  handleClearChange: () => void,
 }
 
 
-export const UserContext = createContext('');
+const UserContext = createContext<AuthContextProps>({} as AuthContextProps);
 
-export function UserProvider({ children }: UserContextChildrenProps) {
-  const [userStateContext, setUserContext] = useState('');
+export function UserProvider({ children }: { children: React.ReactNode }) {
+  const [userAuth, setUserAuth] = useState<UserAuthProps | null>(null);
 
-  const handleNameChange = (newUser: string) => {
-    setUserContext(newUser);
+  const handleStateUserChange = (userAuth: UserAuthProps) => {
+    setUserAuth(userAuth);
+  };
+
+  const handleClearChange = () => {
+    setUserAuth(null);
   };
 
 
+
   return (
-    <UserContext.Provider value={userStateContext}>
+    <UserContext.Provider value={{ userAuth, handleStateUserChange, handleClearChange }}>
       {children}
     </UserContext.Provider>
   );
 };
+
+export const useAuthContext = () => {
+  const context = useContext(UserContext)
+  return context
+}
 
 
 
