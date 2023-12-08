@@ -1,4 +1,3 @@
-import { ChevronDownIcon } from '@chakra-ui/icons'
 import { Card, CardHeader, CardBody, CardFooter, Text, Heading, Stack, StackDivider, Box, Divider, Accordion, AccordionItem, AccordionButton, AccordionIcon, AccordionPanel } from '@chakra-ui/react'
 
 
@@ -23,7 +22,7 @@ export default function CardCustom() {
                 <Box >
                   <div className='flex justify-between border p-[0.15rem] rounded-sm'>
                     <Heading size='xs' textTransform='uppercase' width={'50%'} >
-                      Data: <span>07/12/2023</span>
+                      Data: 07/12/2023
                     </Heading>
                     <Heading
                       size='xs'
@@ -56,8 +55,8 @@ export default function CardCustom() {
                     Status
                     {/* <span>07/12/2023</span> */}
                   </Heading>
-                  <h1 className='flex text-sm pl-2'> - Está em Homologação - 08/12/2023</h1>
-                  <h1 className='flex text-sm pl-2'> - Está em Produção - 08/12/2023</h1>
+                  <h1 className='flex text-sm pl-2'> - Está em Homologação - 08/12/2023 as 12:30</h1>
+                  <h1 className='flex text-sm pl-2'> - Está em Produção - 08/12/2023 as 14:32</h1>
                   {/* <Heading
                 size='xs'
                 textTransform='uppercase'

@@ -39,7 +39,7 @@ export default function Home() {
     <div className="flex flex-col h-screen items-center">
       <Header />
 
-      <div className="flex flex-col w-full h-screen  bg-slate-100  gap-2">
+      <div className="flex flex-col w-full h-screen  bg-slate-100  gap-1">
         <MenuCustom />
         <CardCustom />
       </div>

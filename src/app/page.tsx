@@ -86,7 +86,6 @@ export default function Login() {
               </span>
             }
           </button>
-          {userAuth ? <Link href={"/Home"}>Entrar na Home</Link> : null}
         </form>
       </div>
     </main>
