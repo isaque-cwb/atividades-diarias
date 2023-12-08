@@ -9,6 +9,8 @@ import PulseLoader from "react-spinners/PulseLoader"
 import Cookie from 'js-cookie'
 import { Loading } from "@/components/Loading"
 import Header from "@/components/Header"
+import MenuCustom from "@/components/Menu"
+import CardCustom from "@/components/Card"
 
 
 export default function Home() {
@@ -37,9 +39,11 @@ export default function Home() {
     <div className="flex flex-col h-screen items-center">
       <Header />
 
-      <div className="flex flex-col w-full h-full place-content-center bg-slate-100  gap-2">
-
+      <div className="flex flex-col w-full h-screen  bg-slate-100  gap-2">
+        <MenuCustom />
+        <CardCustom />
       </div>
+
 
     </div>
   )
