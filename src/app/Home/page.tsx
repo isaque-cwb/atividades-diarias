@@ -36,14 +36,13 @@ export default function Home() {
   }
 
   return (
-    <div className="flex flex-col h-screen items-center">
+    <div className="flex flex-col h-screen  ">
       <Header />
 
-      <div className="flex flex-col w-full h-screen  bg-slate-100  gap-1">
-        <MenuCustom />
+      <MenuCustom />
+      <div className="flex flex-col w-full h-auto  bg-slate-100  gap-1">
         <CardCustom />
       </div>
-
 
     </div>
   )

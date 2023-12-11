@@ -30,9 +30,9 @@ export default function Header() {
       <div>
         <h1 className='font-sans font-semibold text-2xl  text-gray-600'>Atividades Diárias</h1>
       </div>
-      <div className='flex flex-col items-center border-2 rounded-xl p-2'>
+      <div className='flex flex-col items-center border-2 rounded-xl p-2  max-w-[128px] max-h-[135px] '>
         <Avatar name='Dan Abrahmov' src='avatar.png' />
-        <h1 className='text-sm'>Olá, <strong>Nome...</strong></h1>
+        <h1 className='text-sm '>Olá, <strong >usuário</strong></h1>
         <div >
           <button type="button" onClick={handleLogout} className="relative w-24 font-bold text-lg mt-1 border-teal-600 border-2 rounded-lg h-6 bg-teal-100 hover:bg-teal-200 transition-all duration-500 flex flex-col items-center shadow-[0_4px_9px_-4px_#0D7E94]" >
             {isLoading
@@ -41,7 +41,6 @@ export default function Header() {
                 color="#0D7E94"
                 size={10}
                 loading={isLoading}
-
               />
               :
               <span className="text-sm transition duration-300 hover:scale-110 ">

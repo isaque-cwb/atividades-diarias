@@ -11,24 +11,34 @@ export default function NewActivit() {
     <div className="flex  flex-col w-screen h-screen items-center justify-center bg-slate-100  gap-1">
       <div className=" gap-4 flex flex-col  border-2 w-[95%] h-[90%] rounded-xl p-4 bg-white max-w-2xl shadow-lg">
         <Center h='auto' color='white' bg={'#DEF7F2'} rounded={10}>
-          <h1 className=" font-bold font-sans text-2xl text-gray-600 m-4">Nova Atividade</h1>
+          <h1 className=" font-bold font-sans text-2xl text-gray-600 m-4">Atualizar Status da Atividade</h1>
         </Center>
-        <div className=" w-40">
-          <p className="w-20  text-sm text-[#616C60] font-semibold">Data Início</p>
-          <input type="date" className="w-36 border-2 rounded-lg p-1 outline-none" />
-        </div>
-        <div className=" w-40">
-          <p className="w-20  text-sm text-[#616C60] font-semibold">Pacote Nº </p>
-          <input type="number" className="w-36 border-2 rounded-lg p-1 outline-none" />
-        </div>
-        <div className="">
+        <div className="flex justify-between ">
 
+          <div className=" w-72 ">
+            <p className="w-20  text-sm text-[#616C60] font-semibold">Data Final</p>
+            <input type="datetime-local" className="w-44 border-2 rounded-lg p-1 outline-none" />
+          </div>
+          <div className="">
+            <p className="w-20  text-sm text-[#616C60] font-semibold">Pacote Nº </p>
+            <input type="number" disabled className="w-36 border-2 rounded-lg p-1 outline-none" />
+          </div>
+        </div>
+        {/* <div className="">
           <p className="  text-sm text-[#616C60] font-semibold">Descrição da Atividade </p>
           <input type="number" className="w-full border-2 rounded-lg p-1 outline-none" />
-        </div>
-        {/* <div >
+        </div> */}
+        <div >
           <p className="  text-sm text-[#616C60] font-semibold">Status da Atividade </p>
           <div className="border-2 rounded-lg p-2 flex flex-col gap-2">
+            <Stack spacing={5} direction='row' >
+              <Checkbox colorScheme='green' >
+                Está em Desenvolvimento
+              </Checkbox>
+              <div>
+                <input type="datetime-local" className="w-34   outline-none border-b-2" />
+              </div>
+            </Stack>
             <Stack spacing={5} direction='row' >
               <Checkbox colorScheme='green' >
                 Está em Homologação
@@ -46,7 +56,7 @@ export default function NewActivit() {
               </div>
             </Stack>
           </div>
-        </div> */}
+        </div>
         {/* <div >
           <p className="text-sm text-[#616C60] font-semibold ">Alteração de Banco </p>
           <Textarea placeholder='inserir sql de alteração no banco' height={250} />
@@ -62,7 +72,7 @@ export default function NewActivit() {
             />
             :
             <span className=" transition duration-300 hover:scale-110  w-full">
-              Cadastrar
+              Atualizar
             </span>
           }
         </button>
