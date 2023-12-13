@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardBody, CardFooter, Text, Heading, Stack, StackDivider, Box, Divider, Accordion, AccordionItem, AccordionButton, AccordionIcon, AccordionPanel, Center } from '@chakra-ui/react'
+import { Card, CardHeader, CardBody, Text, Heading, Stack, Box, Divider, Accordion, AccordionItem, AccordionButton, AccordionIcon, AccordionPanel } from '@chakra-ui/react'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import PulseLoader from 'react-spinners/PulseLoader'
@@ -86,13 +86,7 @@ export default function CardCustom() {
                     <h1 className='flex text-sm pl-2'> - Está em Desenvolvimento - 08/12/2023 as 12:30</h1>
                     <h1 className='flex text-sm pl-2'> - Está em Homologação - 08/12/2023 as 12:30</h1>
                     <h1 className='flex text-sm pl-2'> - Está em Produção - 08/12/2023 as 14:32</h1>
-                    {/* <Heading
-                size='xs'
-                textTransform='uppercase'
-                width={'50%'}
-                className='flex justify-end' >
-                Pacote nº : <span className=''>1438</span>
-              </Heading> */}
+
                   </div>
                 </div>
                 <Accordion allowToggle className='my-2  rounded-lg '>

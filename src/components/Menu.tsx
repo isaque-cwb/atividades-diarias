@@ -4,21 +4,17 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
   Button,
+  Icon,
 } from '@chakra-ui/react'
 import { useRouter } from 'next/navigation'
-import { FormEvent } from 'react'
+import { IoTodayOutline } from "react-icons/io5";
 
 
 export default function MenuCustom() {
   const route = useRouter()
 
   function handleRoutes() {
-
     route.push('/newActivit')
   }
   return (
@@ -27,11 +23,16 @@ export default function MenuCustom() {
         <MenuButton as={Button}
           className='bg-white mr-1 '
           background={'#fff'}
-          rightIcon={<ChevronDownIcon />}>
+          rightIcon={<ChevronDownIcon />}
+        >
+
           Atividades
         </MenuButton>
         <MenuList>
-          <MenuItem onClick={handleRoutes}>Nova Atividade</MenuItem>
+          <MenuItem onClick={handleRoutes}>
+            <Icon as={IoTodayOutline} w={'initial'} color={'teal'} h={6} pr={2} />
+            Nova Atividade
+          </MenuItem>
         </MenuList>
 
       </Menu>

@@ -24,6 +24,7 @@ export const config = {
     '/newActivit/:path*',
     '/endActivit/:path*',
     '/changeStatusActivit/:path*',
-    '/newChangeActivit/:path*'
+    '/newChangeActivit/:path*',
+    '/newUser/:path*'
   ]
 }
