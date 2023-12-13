@@ -9,7 +9,7 @@ export default function NewActivit() {
 
   return (
     <div className="flex  flex-col w-screen h-screen items-center justify-center bg-slate-100  gap-1">
-      <div className=" gap-4 flex flex-col  border-2 w-[95%] h-[90%] rounded-xl p-4 bg-white max-w-2xl shadow-lg">
+      <div className=" gap-4 flex flex-col  border-2 w-[95%] h-[90%] rounded-xl p-4 bg-white max-w-2xl shadow-[-2px_2px_29px_-10px_gray]">
         <Center h='auto' color='white' bg={'#DEF7F2'} rounded={10}>
           <h1 className=" font-bold font-sans text-2xl text-gray-600 m-4">Finalizar Atividade</h1>
         </Center>

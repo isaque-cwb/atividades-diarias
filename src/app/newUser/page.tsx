@@ -3,9 +3,19 @@ import { Center } from "@chakra-ui/react";
 import { useRouter } from "next/navigation";
 import { FormEvent, useState } from "react";
 import PulseLoader from "react-spinners/PulseLoader";
+import { z } from 'zod'
+import { useForm } from 'react-hook-form'
+
+const schema = z.object({
+  name: z.string(),
+  email: z.string().email('digite um email válido!'),
+  password: z.string().min(6, 'A Senha precisa ter pelo menos 6 caracteres.'),
+  confirmPassword: z.string().min(6, 'A Senha precisa ter pelo menos 6 caracteres.')
+})
 
 export default function NewUser() {
   const [isLoading, setIsLoading] = useState(false)
+
   const route = useRouter()
 
   function handleNavigation(e: FormEvent<HTMLElement>) {
@@ -16,7 +26,7 @@ export default function NewUser() {
 
   return (
     <div className="flex  flex-col w-screen h-screen  items-center  bg-slate-100  gap-1">
-      <div className=" gap-4 flex flex-col border-2 w-[95%] h-auto mt-3 rounded-xl p-4 bg-white max-w-2xl shadow-lg">
+      <div className=" gap-4 flex flex-col border-2 w-[95%] h-auto mt-3 rounded-xl p-4 bg-white max-w-2xl shadow-[-2px_2px_29px_-10px_gray]">
         <Center h='auto' color='white' bg={'#DEF7F2'} rounded={10}>
           <h1 className=" font-bold font-sans text-2xl text-gray-600 m-4">Cadastrar Usuário</h1>
         </Center>
@@ -24,6 +34,7 @@ export default function NewUser() {
         <div className="">
           <p className="  text-sm text-[#616C60] font-semibold">Nome </p>
           <input type="text" className="w-full border-2 rounded-lg p-1 outline-none" />
+
         </div>
         <div className="">
           <p className="  text-sm text-[#616C60] font-semibold">Email </p>
@@ -31,6 +42,10 @@ export default function NewUser() {
         </div>
         <div className="">
           <p className="  text-sm text-[#616C60] font-semibold">Senha </p>
+          <input type="email" className="w-full border-2 rounded-lg p-1 outline-none" />
+        </div>
+        <div className="">
+          <p className="  text-sm text-[#616C60] font-semibold">Confirmação de Senha </p>
           <input type="email" className="w-full border-2 rounded-lg p-1 outline-none" />
         </div>
 

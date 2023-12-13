@@ -64,7 +64,7 @@ export default function Login() {
   return (
 
     <main className="grid h-screen place-content-center bg-slate-100 ">
-      <div className="  bg-white shadow-lg border-2 rounded-2xl h-[30rem] w-[25rem] flex items-center justify-center flex-col">
+      <div className="  bg-white shadow-[-2px_2px_29px_-10px_gray] border-2 rounded-2xl h-[30rem] w-[25rem] flex items-center justify-center flex-col">
         <div className=" w-60 h-auto rounded-3xl p-3 bg-white overflow-hidden">
           <Image src={imgPlanejamento} alt="atividades diárias" className=" object-cover " />
         </div>
