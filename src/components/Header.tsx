@@ -1,10 +1,14 @@
-import { Box, Image, Wrap, WrapItem } from '@chakra-ui/react'
+import { Box, Button, Icon, Image, Menu, MenuButton, MenuItem, MenuList, Wrap, WrapItem } from '@chakra-ui/react'
 import { Avatar, AvatarBadge, AvatarGroup } from '@chakra-ui/react'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import PulseLoader from 'react-spinners/PulseLoader'
 import Cookie from 'js-cookie'
 import { useAuthContext } from '@/context/authContext'
+import { ChevronDownIcon } from '@chakra-ui/icons'
+import { PlusSquareIcon } from '@chakra-ui/icons'
+import { IoExitOutline } from "react-icons/io5";
+import { IoCreateOutline } from "react-icons/io5";
 
 export default function Header() {
   const [isLoading, setIsLoading] = useState(false)
@@ -30,7 +34,32 @@ export default function Header() {
       <div>
         <h1 className='font-sans font-semibold text-2xl  text-gray-600'>Atividades Diárias</h1>
       </div>
-      <div className='flex flex-col items-center border-2 rounded-xl p-2  max-w-[128px] max-h-[135px] '>
+
+      <Menu  >
+        <MenuButton
+          as={Button}
+          h={'auto'}
+          w={'auto'}
+          p={2}
+          bg={'#FFF'}
+          className='flex  items-center border-2 rounded-xl p-2 h- max-w-[128px] max-h-[135px]'>
+
+          <Avatar name='avatar vazio' src='avatar.png' />
+          <h1 className='text-sm overflow-hidden text-ellipsis '>Olá, <strong  >Usuário</strong></h1>
+
+        </MenuButton>
+        <MenuList>
+          <MenuItem minH='auto' >
+            <Icon as={IoCreateOutline} style={{ width: 45, height: 25, color: 'teal' }} />
+            <span>Cadastrar Usuário</span>
+          </MenuItem>
+          <MenuItem minH='auto' onClick={handleLogout} >
+            <Icon as={IoExitOutline} style={{ width: 45, height: 25, color: 'teal' }} />
+            <span>Sair</span>
+          </MenuItem>
+        </MenuList>
+      </Menu>
+      {/* <div className='flex flex-col items-center border-2 rounded-xl p-2  max-w-[128px] max-h-[135px] '>
         <Avatar name='Dan Abrahmov' src='avatar.png' />
         <h1 className='text-sm '>Olá, <strong >usuário</strong></h1>
         <div >
@@ -49,7 +78,9 @@ export default function Header() {
             }
           </button>
         </div>
-      </div>
+      </div> */}
+
+
 
     </div>
   )

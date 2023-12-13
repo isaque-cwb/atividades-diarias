@@ -114,7 +114,7 @@ export default function CardCustom() {
                   </AccordionItem>
 
                 </Accordion>
-                <div className=' flex gap-10 mt-7'>
+                <div className=' flex gap-6 mt-7'>
 
                   <button onClick={() => { handleRoutes('/newChangeActivit') }} className="font-bold text-sm  border-teal-600 border-2 rounded-lg w-52 h-8 bg-teal-100 hover:bg-teal-200 transition-all duration-500 flex flex-col items-center shadow-[0_4px_9px_-4px_#0D7E94]" >
                     {isLoading

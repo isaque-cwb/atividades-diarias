@@ -23,11 +23,10 @@ export default function MenuCustom() {
   }
   return (
     <div className=' bg-white m-1 rounded-lg border-2 p-1'>
-      <Menu variant={'outline'} >
+      <Menu variant={'outline'}  >
         <MenuButton as={Button}
           className='bg-white mr-1 '
           background={'#fff'}
-          borderWidth={2}
           rightIcon={<ChevronDownIcon />}>
           Atividades
         </MenuButton>
