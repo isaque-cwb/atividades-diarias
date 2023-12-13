@@ -1,10 +1,16 @@
 import { Card, CardHeader, CardBody, CardFooter, Text, Heading, Stack, StackDivider, Box, Divider, Accordion, AccordionItem, AccordionButton, AccordionIcon, AccordionPanel, Center } from '@chakra-ui/react'
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import PulseLoader from 'react-spinners/PulseLoader'
 
 
 export default function CardCustom() {
   const [isLoading, setIsLoading] = useState(false)
+  const route = useRouter()
+
+  function handleRoutes(tela: string) {
+    route.push(tela)
+  }
 
 
   const data = [
@@ -110,7 +116,7 @@ export default function CardCustom() {
                 </Accordion>
                 <div className=' flex gap-10 mt-7'>
 
-                  <button type="submit" className="font-bold text-sm  border-teal-600 border-2 rounded-lg w-52 h-8 bg-teal-100 hover:bg-teal-200 transition-all duration-500 flex flex-col items-center shadow-[0_4px_9px_-4px_#0D7E94]" >
+                  <button onClick={() => { handleRoutes('/newChangeActivit') }} className="font-bold text-sm  border-teal-600 border-2 rounded-lg w-52 h-8 bg-teal-100 hover:bg-teal-200 transition-all duration-500 flex flex-col items-center shadow-[0_4px_9px_-4px_#0D7E94]" >
                     {isLoading
                       ? <PulseLoader
                         className="  w-full  flex justify-center"
@@ -125,7 +131,7 @@ export default function CardCustom() {
                       </span>
                     }
                   </button>
-                  <button type="submit" className="font-bold text-sm  border-teal-600 border-2 rounded-lg  w-52 h-8 bg-teal-100 hover:bg-teal-200 transition-all duration-500 flex flex-col items-center shadow-[0_4px_9px_-4px_#0D7E94]" >
+                  <button onClick={() => { handleRoutes('/changeStatusActivit') }} className="font-bold text-sm  border-teal-600 border-2 rounded-lg  w-52 h-8 bg-teal-100 hover:bg-teal-200 transition-all duration-500 flex flex-col items-center shadow-[0_4px_9px_-4px_#0D7E94]" >
                     {isLoading
                       ? <PulseLoader
                         className="  w-full  flex justify-center"
@@ -140,7 +146,7 @@ export default function CardCustom() {
                       </span>
                     }
                   </button>
-                  <button type="submit" className="font-bold text-sm  border-teal-600 border-2 rounded-lg  w-52 h-8 bg-teal-100 hover:bg-teal-200 transition-all duration-500 flex flex-col items-center shadow-[0_4px_9px_-4px_#0D7E94]" >
+                  <button onClick={() => { handleRoutes('/endActivit') }} className="font-bold text-sm  border-teal-600 border-2 rounded-lg  w-52 h-8 bg-teal-100 hover:bg-teal-200 transition-all duration-500 flex flex-col items-center shadow-[0_4px_9px_-4px_#0D7E94]" >
                     {isLoading
                       ? <PulseLoader
                         className="  w-full  flex justify-center"

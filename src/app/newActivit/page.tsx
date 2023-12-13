@@ -24,7 +24,7 @@ export default function NewActivit() {
         <div className="">
 
           <p className="  text-sm text-[#616C60] font-semibold">Descrição da Atividade </p>
-          <input type="number" className="w-full border-2 rounded-lg p-1 outline-none" />
+          <input type="text" className="w-full border-2 rounded-lg p-1 outline-none" />
         </div>
         {/* <div >
           <p className="  text-sm text-[#616C60] font-semibold">Status da Atividade </p>

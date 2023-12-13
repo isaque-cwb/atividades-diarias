@@ -10,9 +10,17 @@ import {
   MenuDivider,
   Button,
 } from '@chakra-ui/react'
+import { useRouter } from 'next/navigation'
+import { FormEvent } from 'react'
 
 
 export default function MenuCustom() {
+  const route = useRouter()
+
+  function handleRoutes() {
+
+    route.push('/newActivit')
+  }
   return (
     <div className=' bg-white m-1 rounded-lg border-2 p-1'>
       <Menu variant={'outline'} >
@@ -24,7 +32,7 @@ export default function MenuCustom() {
           Atividades
         </MenuButton>
         <MenuList>
-          <MenuItem>Nova Atividade</MenuItem>
+          <MenuItem onClick={handleRoutes}>Nova Atividade</MenuItem>
         </MenuList>
 
       </Menu>

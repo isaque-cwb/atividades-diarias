@@ -34,7 +34,7 @@ export default function Login() {
       handleStateUserChange(user)
       window.sessionStorage.setItem('auth_token', user.user.uid)
       Cookie.set('auth_token', user.user.uid)
-      setIsLoading(false)
+      //setIsLoading(false)
       router.push('/Home')
 
     }).catch(error => {
